@@ -87,7 +87,7 @@ var userEmail = ""
         console.log("my correct guesses: ", myCorrectGuesses)
         myGame.trys.push(myCorrectGuesses)
         var theWordToGuess = myWord.StrWord()
-        //console.log(theWordToGuess)
+        console.log(theWordToGuess)
         //console.log("trys:",myGame.trys)
 
         if(myGame.trys[myGame.trys.length-1]===myGame.trys[myGame.trys.length-2]){
