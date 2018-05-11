@@ -87,8 +87,8 @@ var userEmail = ""
         console.log("my correct guesses: ", myCorrectGuesses)
         myGame.trys.push(myCorrectGuesses)
         var theWordToGuess = myWord.StrWord()
-        console.log(theWordToGuess)
-        console.log("trys:",myGame.trys)
+        //console.log(theWordToGuess)
+        //console.log("trys:",myGame.trys)
 
         if(myGame.trys[myGame.trys.length-1]===myGame.trys[myGame.trys.length-2]){
                     myGame.missed +=1
@@ -100,14 +100,18 @@ var userEmail = ""
             playTheGame(myGame.playerName)
 
         }
-        if(myGame.missed<7){
-            guessLetters(myWord, myGame)
+        else{
+
+            if(myGame.missed<7){
+                guessLetters(myWord, myGame)
+            }
+            else if(myGame.missed===7){
+                console.log("Game Over!")
+                myGame.numberLosses+=1
+                playTheGame(myGame.playerName)
+            }      
         }
-        else if(myGame.missed===7){
-            console.log("Game Over!")
-            myGame.numberLosses+=1
-            playTheGame(myGame.playerName)
-        }      
+        
         // console.log(myGame.trys.last)
  
        
